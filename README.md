@@ -16,7 +16,7 @@ Simple Application using POKE API, this application still under development.
 
 ## Screenshots
 
-![App Screenshot](https://trello.com/1/cards/654b09b7bef6cc7f7cc6f785/attachments/65547ea8bef762dfd4bdfe0b/previews/65547ea9bef762dfd4bdfe2d/download/Screenshot_(169).png)
+![Pokemon](https://github.com/rzidanlib/pokemon-api/assets/135516816/f6e109b8-09da-4e57-996a-b883aab95a2f)
 
 
 ## Run Locally
