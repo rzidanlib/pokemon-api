@@ -2,14 +2,14 @@
 import axios from "axios";
 import { Pokemon, PokemonDetail } from "../interfaces/Pokemon";
 
+const url: string = import.meta.env.VITE_POKE_API;
+
 export const fetchPokemon = async (
   limit: number,
   offset: number
 ): Promise<Pokemon[]> => {
   try {
-    const response = await axios.get(
-      `https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`
-    );
+    const response = await axios.get(`${url}?limit=${limit}&offset=${offset}`);
     const pokemonList = response.data.results;
 
     const pokemonDetails = pokemonList.map(async (pokemon: any) => {
@@ -17,7 +17,7 @@ export const fetchPokemon = async (
       return {
         id: pokemonData.data.id,
         name: pokemonData.data.name,
-        image: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonData.data.id}.png`,
+        image: pokemonData.data.sprites.front_default,
       };
     });
 
@@ -56,15 +56,13 @@ export const filterPokemon = async (name: string): Promise<Pokemon[]> => {
 // Search pokemon while word is complete
 export const searchPokemon = async (name: string): Promise<Pokemon[]> => {
   try {
-    const response = await axios.get(
-      `https://pokeapi.co/api/v2/pokemon/${name.toLowerCase()}`
-    );
+    const response = await axios.get(`${url}/${name.toLowerCase()}`);
     const pokemonData = response.data;
     return [
       {
         id: pokemonData.id,
         name: pokemonData.name,
-        image: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonData.id}.png`,
+        image: pokemonData.sprites.front_default,
       },
     ];
   } catch (error) {
@@ -77,7 +75,7 @@ export const fetchPokemonDetail = async (
   id: number
 ): Promise<PokemonDetail | null> => {
   try {
-    const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`);
+    const response = await axios.get(`${url}/${id}`);
     return response.data;
   } catch (error) {
     console.log("Error fetching data....", error);

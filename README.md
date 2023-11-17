@@ -1,27 +1,54 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Logo](https://miro.medium.com/v2/resize:fit:720/format:webp/1*A4AhcQBucS8bLpNRq3HCLg.png)
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Pokemon API
 
-## Expanding the ESLint configuration
+Simple Application using POKE API, this application still under development.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-- Configure the top-level `parserOptions` property like this:
+## Tech Stack
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
+**Client:** React, Typescript, TailwindCSS
+
+**Server:** Node
+
+
+## Screenshots
+
+![App Screenshot](https://trello.com/1/cards/654b09b7bef6cc7f7cc6f785/attachments/65547ea8bef762dfd4bdfe0b/previews/65547ea9bef762dfd4bdfe2d/download/Screenshot_(169).png)
+
+
+## Run Locally
+
+Clone the project
+
+```bash
+  git clone https://github.com/rzidanlib/pokemon-api.git
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Go to the project directory
+
+```bash
+  cd pokemon-api
+```
+
+Install dependencies
+
+```bash
+  npm install
+```
+
+Start the server
+
+```bash
+  npm run dev
+```
+
+
+## Environment Variables
+
+To run this project, you will need to add the following environment variables to your .env file, put pokemon api in this env variables.
+
+`VITE_POKE_API`
+
